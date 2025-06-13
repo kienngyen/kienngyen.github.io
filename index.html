@@ -94,8 +94,16 @@
     }
 
     @media (max-width: 767px) {
+        .toc {
+            position: static;
+            width: 100%;
+            border-left: none;
+            border-top: 2px solid #00bfa5;
+            margin-bottom: 1rem;
+        }
+
         .markdown-body {
-            padding: 15px;
+            margin-left: 0;
         }
 
         .container {
@@ -104,13 +112,13 @@
 
         .image-column {
             max-width: 100%;
-            padding-top: 1rem; /* Reduced top padding for mobile */
-            padding-left: 0; /* Removed left padding */
+            padding-top: 1rem; 
+            padding-left: 0; 
         }
 
         .portrait-circular {
-            max-width: 70%; /* Limits image size on mobile */
-            margin: 0 auto 1rem; /* Centers image */
+            max-width: 70%; 
+            margin: 0 auto 1rem; 
         }
     }
 
