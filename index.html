@@ -75,9 +75,11 @@
 
     .image-column {
         flex: 0 0 auto;
-        max-width: 230px;
-        padding-top:4rem;
-        padding-left:2rem;
+        max-width: 200px; 
+        padding-top: 4rem;
+        display: flex; 
+        justify-content: center;
+        width: 100%;
     }
 
     .content-column {
@@ -85,8 +87,8 @@
     }
 
     .portrait-circular {
-        width: 90%;
-        max-width: 300px;
+        width: 100%; /* Changed from 90% to use full container width */
+        max-width: 300px; /* Increased from 230px */
         height: auto;
         border-radius: 8px;
     }
@@ -102,11 +104,13 @@
 
         .image-column {
             max-width: 100%;
+            padding-top: 1rem; /* Reduced top padding for mobile */
+            padding-left: 0; /* Removed left padding */
         }
 
         .portrait-circular {
-            max-width: 100%;
-            margin-bottom: 1rem;
+            max-width: 70%; /* Limits image size on mobile */
+            margin: 0 auto 1rem; /* Centers image */
         }
     }
 
