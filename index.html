@@ -12,17 +12,30 @@
         min-width: 200px;
         max-width: 980px;
         margin: 0 auto;
-        padding: 45px;
+        background-color: white;
+        padding: 0 45px 45px 45px;
         position: relative;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05); /* subtle shadow */
     }
     
+    .top-banner {
+        background-image: url('images/banner.jpg');
+        background-size: cover;
+        background-position: 25% 28%;
+        height: 170px;
+        width: 100%;
+        border-bottom: 2px solid #eaecef;
+        position: relative;
+        margin: 0;
+    }
+
     .toc {
         position: fixed;
         top: 100px;
-        left: calc(50% - 658px);
+        left: calc(50% - 700px);
         width: 200px;
         font-size: 14px;
-        background-color: #ffffff;
+        background-color: #f0f4f8;
         border-left: 2px solid #00bfa5;
         padding-left: 10px;
         line-height: 1.8;
@@ -76,12 +89,10 @@
     }
 
     .image-column {
-        flex: 0 0 auto;
-        max-width: 200px; 
-        padding-top: 4rem;
-        display: flex; 
+        display: flex;
         justify-content: center;
-        width: 100%;
+        align-items: center;
+        padding-top: 0rem;
     }
 
     .content-column {
@@ -89,12 +100,14 @@
     }
 
     .portrait-circular {
-        width: 100%; 
-        max-width: 300px; 
-        height: auto;
-        border-radius: 8px;
+        width: 200px;       
+        height: 220px;
+        border-radius: 100%; 
+        object-fit: cover;  
+        display: block;
     }
-    @media (max-width: 1300px) {
+
+    @media (max-width: 1400px) {
         .toc {
             display: none;
         }
@@ -125,18 +138,22 @@
         }
     }
 
-    html {
+    html, body {
+        background-color: 	#f0f4f8; 
+        margin: 0;
+        padding: 0;
         width: 100vw;
         scroll-behavior: smooth;
-    }
-
-    body {
         overflow-x: auto;
     }
+
+    
   </style>
 </head>
 
+<div class="top-banner"></div>
 <body class="markdown-body">
+
     <div class="toc">
     <p><strong>On this page</strong></p>
     <ul>
@@ -162,7 +179,7 @@
 
     <div class="container">
         <div class="image-column">
-            <img class="portrait-circular" src="profile_picture.jpg" alt="Kien Nguyen">
+            <img class="portrait-circular" src="images/profile_picture.jpg" alt="Kien Nguyen">
     </div>
     <div class="content-column">
         <h2 id="about-me">About me</h2>
