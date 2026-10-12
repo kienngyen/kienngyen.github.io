@@ -1,240 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kien Nguyen</title>
-  <link rel="stylesheet" href="githubmarkdown.css">
-  <style>
-    .markdown-body {
-        box-sizing: border-box;
-        min-width: 200px;
-        max-width: 980px;
-        margin: 0 auto;
-        background-color: white;
-        padding: 0 45px 45px 45px;
-        position: relative;
-        box-shadow: 0 0 20px rgba(0,0,0,0.05); /* subtle shadow */
-    }
-    
-    .top-banner {
-        background-image: url('images/banner.jpg');
-        background-size: cover;
-        background-position: 25% 28%;
-        height: 170px;
-        width: 100%;
-        border-bottom: 2px solid #d1d5da;
-        position: relative;
-        margin: 0;
-    }
+    <title>Kien Nguyen</title>
+    <meta name="description" content="Kien Nguyen – Honours B.Sc. student in Applied Statistics, Computer Science and Mathematics at the University of Toronto.">
 
-    .toc {
-        position: fixed;
-        top: 100px;
-        left: calc(50% - 700px);
-        width: 200px;
-        font-size: 14px;
-        background-color: white;
-        border-left: 2px solid #00bfa5;
-        padding-left: 10px;
-        line-height: 1.8;
-        z-index: 10;
-    }
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="index.html">Kien Nguyen</a></h1>
 
-    .toc a {
-        text-decoration: none;
-        color: #000;
-    }
+        <img src="images/profile_picture.jpg" alt="Kien Nguyen">
 
-    .toc a:hover {
-        color: #00bfa5;
-        text-decoration: underline;
-    }
+        <p>Honours B.Sc. in Applied Statistics, Computer Science &amp; Mathematics<br>
+        <a href="https://www.utm.utoronto.ca/">University of Toronto Mississauga</a></p>
 
-    .header-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #d1d5da;
-    }
+        <p><strong>Email:</strong> kien.nguyen@mail.utoronto.ca</p>
 
-    .header-bar h1 {
-        margin: 0;
-        font-size: 2em;
-        }
+        <p class="view"><a href="https://github.com/kienngyen">View My GitHub Profile <small>kienngyen</small></a></p>
 
-    .navbar {
-        display: flex;
-        gap: 18px;
-        }
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        </ul>
 
-    .navbar a {
-        text-decoration: none;
-        color: #007acc;
-        font-weight: bold;
-        font-size: 15px;
-    }
+        <ul>
+          <li><a href="https://www.linkedin.com/in/kien-nguyen72/">LinkedIn <strong>Profile</strong></a></li>
+          <li><a href="https://github.com/kienngyen">GitHub <strong>Profile</strong></a></li>
+          <li><a href="https://www.instagram.com/fredbyshevv/">Instagram <strong>@fredbyshevv</strong></a></li>
+        </ul>
 
-    .navbar a:hover {
-        text-decoration: underline;
-    }
+      </header>
+      <section>
 
-    .container {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 0rem; 
-        padding-top: 0rem; 
-        padding-bottom: 0rem; 
-    }
+        <h1>About Me</h1>
+        <p>I am a student pursuing <strong>Honours Bachelor of Science</strong> in <strong>Applied Statistics</strong>, <strong>Computer Science</strong> and <strong>Mathematics</strong> at the <a href="https://www.utm.utoronto.ca/">University of Toronto Mississauga</a>, expected to graduate June 2026.</p>
+        <p>My current focus is in machine learning and data visualization.</p>
 
-    .image-column {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 0rem;
-    }
+        <hr>
 
-    .content-column {
-        flex: 1;
-        padding-top: 0rem;
-    }
+        <h2>Research Interest</h2>
+        <p>I have been deeply exploring how applied statistics can be meaningfully utilized across fields such as computational biology and finance—not as a set of mathematical tools, but as a powerful language for uncovering and explaining domain phenomena.</p>
 
-    .portrait-circular {
-        width: 200px;       
-        height: 220px;
-        border-radius: 100%; 
-        object-fit: cover;  
-        display: block;
-        padding-top: 0rem;
-    }
+        <hr>
 
-    @media (max-width: 1400px) {
-        .toc {
-            display: none;
-        }
-    }
+        <h2>Work Experience</h2>
+        <ul>
+          <li><strong>Poll Clerk &amp; Data Analyst</strong> (Full Time, Seasonally) at <a href="https://utmsu.ca/" target="_blank">UTMSU</a>, Mississauga, Canada – Fall 2024, Winter 2025</li>
+          <li><strong>Tutor</strong> (Part Time) at <a href="https://www.teacheronwheels.ca/" target="_blank">Teacher on Wheels</a>, Vancouver, Canada – Summer 2023 to Winter 2025</li>
+          <li><strong>Software Developer</strong> (Full Time) at <a href="https://www.facebook.com/skyfitness1/" target="_blank">SkyFitness</a>, Hanoi, Vietnam – Summer 2023</li>
+          <li><strong>Software Developer</strong> (Part Time) at Algebraic Wealth, Toronto, Canada – Summer 2023</li>
+        </ul>
 
-    @media (max-width: 767px) {
-        .toc {
-            display: none;
-        }
+        <hr>
 
-        .markdown-body {
-            margin-left: 0;
-        }
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Market Map</strong> | <a href="https://www.facebook.com/skyfitness1/" target="_blank">Source Code</a>, Hanoi, Vietnam – Summer 2024</li>
+          <li><strong>Data Analyst</strong> (Part Time) at Algebraic Wealth, Toronto, Canada – Summer 2024</li>
+        </ul>
 
-        .container {
-            flex-direction: column;
-            padding-top: 0rem;
-        }
+        <hr>
 
-        .image-column {
-            max-width: 100%;
-            padding-top: 1rem; 
-            padding-left: 0; 
-        }
+        <h2>Relevant Course Work</h2>
+        <ul>
+          <li><strong>CSC148: Introduction to Computer Science</strong>, with <a href="https://utmandrew.bitbucket.io/">Prof. Andrew Petersen</a>.</li>
+          <li><strong>STA260: Probability and Statistics II</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
+          <li><strong>STA258: Statistics with Applied Probability</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/samir-hamdi">Prof. Samir Hamdi</a>.</li>
+          <li><strong>STA302: Methods of Data Analysis I</strong>, with <a href="https://austindavidbrown.github.io/">Prof. Austin Brown</a>.</li>
+          <li><strong>STA304: Surveys, Sampling and Observational Data</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
+          <li><strong>STA305: Experimental Design</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
+          <li><strong>STA380: Computational Statistics</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
+          <li><strong>BIO360: Biometrics I</strong>, with <a href="https://www.utm.utoronto.ca/biology/people/lars-barquist">Prof. Lars Barquist</a>.</li>
+          <li><strong>STA314: Statistical Learning</strong>, with TBD.</li>
+          <li><strong>STA437: Methods for Multivariate Data</strong>, with TBD.</li>
+          <li><strong>STA410/STA2102: Statistical Computation</strong>, with TBD.</li>
+          <li><strong>STA457/STA2202: Time Series Analysis</strong>, with TBD.</li>
+          <li><strong>CSC316: Data Visualization: Foundations and Advanced Programming</strong>, with TBD.</li>
+        </ul>
 
-        .portrait-circular {
-            max-width: 70%; 
-            margin: 0 auto 1rem; 
-        }
-    }
+        <hr>
 
-    html, body {
-        background-color: 	white; 
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        scroll-behavior: smooth;
-        overflow-x: auto;
-    }
+        <h2>Fun Facts</h2>
+        <ul>
+          <li>🥈 Runner-Up, Badminton Doubles – <a href="https://www.utm.utoronto.ca/athletics/sports/utm-intramurals">UTM Intramural Sports</a>, 2024.</li>
+          <li>🥈 Runner-Up, Badminton Singles – <a href="https://www.utm.utoronto.ca/athletics/sports/utm-intramurals">UTM Intramural Sports</a>, 2023.</li>
+          <li>🥇 Ten-Time Champion, Clash Tournament – <a href="https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360000951548-Clash-FAQ">League of Legends</a>, 2019-2021</li>
+          <li>🏆 Outstanding Achievement in Art Portfolio – <a href="https://www.lincolnlutheran.org/">Lincoln Lutheran High</a>, 2018-2019</li>
+          <li>🗣️ Top Competitor, Vietnam Schools Debating Championship – <a href="https://www.nordangliaeducation.com/bvis-hanoi/news/2017/11/20/bvis-hanoi-wins-hanoi-open-vietnam-schools-debating-championship">VSDC</a>, 2017</li>
+          <li>I loved trading cards on <a href="https://www.ea.com/games/nba-live/nba-live-mobile">NBA Live Mobile</a> and doing fractions as a kid. Part of it is why I chose what I study today.</li>
+        </ul>
 
-    
-  </style>
-</head>
-
-<div class="top-banner"></div>
-<body class="markdown-body">
-
-    <div class="toc">
-    <p><strong>On this page</strong></p>
-    <ul>
-        <li><a href="#about-me">About Me</a></li>
-        <li><a href="#research-interest">Research Interests</a></li>
-        <li><a href="#work">Work Experience</a></li>
-        <li><a href="#timeline">TimeLine</a></li>
-        <li><a href="#course">Course Work</a></li>
-        <li><a href="#fun-facts">Fun Facts</a></li>
-    </ul>
+      </section>
+      <footer>
+        <p><small>Based on the <a href="https://github.com/pages-themes/minimal">Minimal</a> theme for GitHub Pages</small></p>
+      </footer>
     </div>
-
-    <div class="header-bar">
-    <h1>Kien Nguyen</h1>
-
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="resume.pdf" target="_blank">Resume</a>
-    </nav>
-    </div>
-
-    <div class="container">
-        <div class="image-column">
-            <img class="portrait-circular" src="images/profile_picture.jpg" alt="Kien Nguyen">
-    </div>
-    <div class="content-column">
-        <h2 id="about-me">About me</h2>
-        <p> I am a student pursuing <strong>Honours Bachelor of Science</strong> in <strong>Applied Statistics</strong>, <strong>Computer Science</strong> and <strong>Mathematics</strong> at the <a href="https://www.utm.utoronto.ca/">University of Toronto Mississauga</a>, expected to graduate June 2026.</p>
-        <p> My current focus is in machine learning and data visualization.
-        <p> <strong>Email:</strong> kien.nguyen@mail.utoronto.ca</p>
-
-        <p> <a href="https://www.linkedin.com/in/kien-nguyen72/">LinkedIn</a> / <a href="https://github.com/kienngyen">Github</a> / <a href="https://www.instagram.com/fredbyshevv/">Instagram</a> </p>
-    </div>
-    </div>
-
-    <h2 id="research-interest">Research Interest</h2>
-    <p> I have been deeply exploring how applied statistics can be meaningfully utilized across fields such as computational biology and finance—not as a set of mathematical tools, but as a powerful language for uncovering and explaining domain phenomena.</p>
-    
-
-    <h2 id="work">Work Experience</h2>
-    <ul>
-        <li><strong>Poll Clerk & Data Analyst</strong> (Full Time, Seasonally) at <a href="https://utmsu.ca/" target="_blank">UTMSU</a>, Mississauga, Canada - Fall 2024, Winter 2025</li>
-        <li><strong>Tutor</strong> (Part Time) at <a href="https://www.teacheronwheels.ca/" target="_blank">Teacher on Wheels</a>, Vancouver, Canada - Summer 2023 to Winter 2025</li>
-        <li><strong>Software Developer</strong> (Full Time) at <a href="https://www.facebook.com/skyfitness1/" target="_blank">SkyFitness</a>, Hanoi, Vietnam - Summer 2023</li>
-        <li><strong>Software Developer</strong> (Part Time) at Algebraic Wealth, Toronto, Canada - Summer 2023</li>
-    </ul>
-
-    <h2 id="course"> Relevant Course Work</h2>
-    <ul>
-        <li><strong>CSC148: Introduction to Computer Science</strong>, with <a href="https://utmandrew.bitbucket.io/">Prof. Andrew Petersen</a>.</li>
-        <li><strong>STA260: Probability and Statistics II</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
-        <li><strong>STA258: Statistics with Applied Probability</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/samir-hamdi">Prof. Samir Hamdi</a>.</li>
-        <li><strong>STA302: Methods of Data Analysis I</strong>, with <a href="https://austindavidbrown.github.io/">Prof. Austin Brown</a>.</li>
-        <li><strong>STA304: Surveys, Sampling and Observational Data</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
-        <li><strong>STA305: Experimental Design</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
-        <li><strong>STA380: Computational Statistics</strong>, with <a href="https://www.utm.utoronto.ca/math-cs-stats/people/luai-al-labadi">Prof. Luai Al Labadi</a>.</li>
-        <li><strong>BIO360: Biometrics I</strong>, with <a href="https://www.utm.utoronto.ca/biology/people/lars-barquist">Prof. Lars Barquist</a>.</li>
-        <li><strong>STA314: Statistical Learning</strong>, with <a href="">TBD</a>.</li>
-        <li><strong>STA437: Methods for Multivariate Data</strong>, with <a href="">TBD</a>.</li>
-        <li><strong>STA410/STA2102: Statistical Computation</strong>, with <a href="">TBD</a>.</li>
-        <li><strong>CSC311: Introoduction to Machine Learning</strong>, with <a href="">TBD</a>.</li>
-        <li><strong>CSC316: Data Visualization: Foundations and Advanced Programming</strong>, with <a href="">TBD</a>.</li>
-
-        <p> See more about my course review <a href="course-review-blog">[here]</a> </p>
-    </ul>
-
-    <h2 id="fun-facts">Fun facts</h2>
-    <ul>
-        <li>🥈Runner-Up, Badminton Doubles - <a href="https://www.utm.utoronto.ca/athletics/sports/utm-intramurals">UTM Intramural Sports</a>, 2024.</li>
-        <li>🥈Runner-Up, Badminton Singles - <a href="https://www.utm.utoronto.ca/athletics/sports/utm-intramurals">UTM Intramural Sports</a>, 2023.</li>
-        <li>🥇Ten-Time Champion, Clash Tournament - <a href="https://support-leagueoflegends.riotgames.com/hc/en-us/articles/360000951548-Clash-FAQ">League of Legends</a>, 2019-2021</li>
-        <li>🏆Outstanding Achievement in Art Portfolio - <a href="https://www.lincolnlutheran.org/">Lincoln Lutheran High</a>, 2018-2019</li>
-        <li>🗣️Top Competitor, Vietnam Schools Debating Championship - <a href="https://www.nordangliaeducation.com/bvis-hanoi/news/2017/11/20/bvis-hanoi-wins-hanoi-open-vietnam-schools-debating-championship">VSDC</a>, 2017</li>
-        <li>I loved trading cards on <a href="https://www.ea.com/games/nba-live/nba-live-mobile">NBA Live Mobile</a> and doing fraction as a kid. Part of it is why I chose what I study today.</li>
-    </ul>
-</body>
+  </body>
 </html>
