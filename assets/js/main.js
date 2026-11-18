@@ -207,10 +207,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (firstClass) badgeClass = ' ' + firstClass;
     }
 
-    // Links: Demo | Presentation | Kaggle | Source code (| Paper if provided). Empty ones are skipped.
+    // Links: Demo | Presentation | Reports | Kaggle | Source code (| Paper if provided). Empty ones are skipped.
     const linkDefs = [
       ['Demo', d.demo_link],
       ['Presentation', d.presentation_link],
+      ['Reports', d.report_link],
       ['Kaggle', d.kaggle_link],
       ['Source code', d.code_link],
       ['Paper', d.paper_link]
