@@ -11,24 +11,24 @@
   ];
 
   const SKILLS = [
-    { id: "01", topic: "Software Engineering", level: 2, keywords: "Python, SQL, Git, OOP, APIs, Data Structures" },
-    { id: "02", topic: "Mathematics & Statistics", level: 3, keywords: "Linear Algebra, Calculus, Probability, Statistics, Hypothesis Testing" },
-    { id: "03", topic: "Data Analytics & Visualization", level: 3, keywords: "Pandas, NumPy, Matplotlib, Seaborn, Tableau, Power BI, EDA" },
-    { id: "04", topic: "Machine Learning", level: 3, keywords: "Supervised Learning, Unsupervised Learning, Feature Engineering, Model Evaluation" },
-    { id: "05", topic: "Deep Learning", level: 1, keywords: "PyTorch, Neural Networks, Backpropagation, CNNs, Transformers, Optimization" },
-    { id: "06", topic: "Big Data & Data Engineering", level: 2, keywords: "Apache Spark, Hadoop, SQL, ETL/ELT, Data Pipelines, Data Warehousing" },
-    { id: "07", topic: "Recommendation & Ranking Systems", level: 2, keywords: "Collaborative Filtering, Content-Based Filtering, Learning to Rank, Retrieval, Ranking Metrics" },
-    { id: "08", topic: "Experimentation & Evaluation", level: 2, keywords: "Offline Metrics, A/B Testing, Statistical Significance, Causal Inference, Experiment Design" },
-    { id: "09", topic: "Generative AI & LLMs", level: 1, keywords: "LLM Architecture, RAG, Fine-tuning, Prompt Engineering, Embeddings, Vector Databases" }
+    { id: "01", topic: "Software Engineering", short: "SWE", level: 2, keywords: "Python, SQL, Git, OOP, APIs, Data Structures" },
+    { id: "02", topic: "Mathematics & Statistics", short: "Math/Stat", level: 3, keywords: "Linear Algebra, Calculus, Probability, Statistics, Hypothesis Testing" },
+    { id: "03", topic: "Data Analytics & Visualization", short: "BI/Viz", level: 3, keywords: "Pandas, NumPy, Matplotlib, Seaborn, Tableau, Power BI, EDA" },
+    { id: "04", topic: "Machine Learning", short: "ML", level: 3, keywords: "Supervised Learning, Unsupervised Learning, Feature Engineering, Model Evaluation" },
+    { id: "05", topic: "Deep Learning", short: "DL", level: 1, keywords: "PyTorch, Neural Networks, Backpropagation, CNNs, Transformers, Optimization" },
+    { id: "06", topic: "Big Data & Data Engineering", short: "DE", level: 2, keywords: "Apache Spark, Hadoop, SQL, ETL/ELT, Data Pipelines, Data Warehousing" },
+    { id: "07", topic: "Recommendation & Ranking Systems", short: "RecSys", level: 2, keywords: "Collaborative Filtering, Content-Based Filtering, Learning to Rank, Retrieval, Ranking Metrics" },
+    { id: "08", topic: "Experimentation & Evaluation", short: "A/B Test", level: 2, keywords: "Offline Metrics, A/B Testing, Statistical Significance, Causal Inference, Experiment Design" },
+    { id: "09", topic: "Generative AI & LLMs", short: "LLMs", level: 1, keywords: "LLM Architecture, RAG, Fine-tuning, Prompt Engineering, Embeddings, Vector Databases" }
   ];
 
   const host = d3.select("#skills-radar");
   if (host.empty()) return;
 
   const W = 500, H = 440, cx = W / 2, cy = H / 2 + 4;
-  const R = 112, maxLevel = 4, n = SKILLS.length;
-  const ACCENT = "#ffe291ff";
-  const HOVER = "#ff5c33ff"; // light red for hover highlight
+  const R = 150, maxLevel = 4, n = SKILLS.length;
+  const ACCENT = "#e9b730ff";
+  const HOVER = "#ff5c33ff"; // hover highlight
 
   const angle = i => (Math.PI * 2 * i) / n - Math.PI / 2;
   const rScale = d3.scaleLinear().domain([0, maxLevel]).range([0, R]);
@@ -38,7 +38,7 @@
   ];
 
   const svg = host.append("svg")
-    .attr("viewBox", `0 78 ${W} ${H - 146}`) // visible area y: 78 → 372 (fits the whole chart + labels)
+    .attr("viewBox", `0 52 ${W} 344`) // visible area y: 68 → 384 (whole chart + labels)
     .attr("width", "100%")
     .attr("role", "img")
     .attr("aria-label", "Radar chart of skill levels across nine topics");
@@ -49,7 +49,7 @@
   d3.range(1, maxLevel + 1).forEach(v => {
     grid.append("path").attr("d", ringPath(v))
       .attr("fill", v % 2 ? "rgba(255,255,255,0.35)" : "none")
-      .attr("stroke", "#d9d3bd").attr("stroke-width", 1);
+      .attr("stroke", "#dfce93ff").attr("stroke-width", 1);
   });
 
   // Ring level labels
@@ -57,7 +57,7 @@
   d3.range(1, maxLevel + 1).forEach(v => {
     ringLabels.append("text")
       .attr("x", cx + 3).attr("y", cy - rScale(v) + 10)
-      .attr("font-size", 9).attr("fill", "#aaa").text(v);
+      .attr("font-size", 12).attr("fill", "#636363ff").text(v);
   });
 
   // Axes
@@ -65,7 +65,7 @@
     .attr("x1", cx).attr("y1", cy)
     .attr("x2", (d, i) => pt(i, maxLevel)[0])
     .attr("y2", (d, i) => pt(i, maxLevel)[1])
-    .attr("stroke", "#d9d3bd");
+    .attr("stroke", "#dfce93ff");
 
   // Data polygon (animated from center)
   const polyPoints = (scale = 1) =>
@@ -96,16 +96,16 @@
   }
 
   const labels = svg.append("g").selectAll("text").data(SKILLS).join("text")
-    .attr("font-size", 11).attr("font-weight", 600).attr("fill", "#555")
+    .attr("font-size", 17).attr("font-weight", 600).attr("fill", "#555")
     .style("cursor", "pointer")
     .each(function (d, i) {
       const [x, y] = pt(i, maxLevel, 14);
       const cosA = Math.cos(angle(i));
       const anchor = Math.abs(cosA) < 0.2 ? "middle" : cosA > 0 ? "start" : "end";
-      const lines = wrap(d.topic);
+      const lines = wrap(d.short, 10);
       const t = d3.select(this).attr("text-anchor", anchor).attr("x", x);
-      const startY = y - ((lines.length - 1) * 13) / 2 + 4;
-      lines.forEach((l, k) => t.append("tspan").attr("x", x).attr("y", startY + k * 13).text(l));
+      const startY = y - ((lines.length - 1) * 17) / 2 + 5;
+      lines.forEach((l, k) => t.append("tspan").attr("x", x).attr("y", startY + k * 17).text(l));
     });
 
   // Level text: shown top-left (in its own reserved space above the chart)
@@ -127,12 +127,25 @@
     labels.attr("fill", (_, k) => (k === i ? HOVER : "#555"));
   }
   function hide() {
+    // Return to the pinned skill (if any), otherwise clear the highlight
+    if (pinned !== null) { show(pinned); return; }
     key.classed("visible", false);
     dots.attr("r", 4).attr("fill", "#fff").attr("stroke", ACCENT);
     labels.attr("fill", "#555");
   }
+
+  // Click a dot or label to pin its hover state; click it again (or empty space) to unpin
+  let pinned = null;
   [dots, labels].forEach(sel =>
-    sel.on("mouseenter focus", (e, d) => show(SKILLS.indexOf(d))).on("mouseleave blur", hide));
+    sel.on("mouseenter focus", (e, d) => show(SKILLS.indexOf(d)))
+      .on("mouseleave blur", hide)
+      .on("click", (e, d) => {
+        e.stopPropagation();
+        const i = SKILLS.indexOf(d);
+        pinned = pinned === i ? null : i;
+        if (pinned === null) hide(); else show(pinned);
+      }));
+  svg.on("click", () => { pinned = null; hide(); });
 
   // Animate in once visible
   function animateIn() {
